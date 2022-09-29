@@ -1,0 +1,134 @@
+/* General Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Properties */
+
+:root {
+  /* Line Height */
+
+  --lineHeight-1: 71px;
+  --lineHeight-2: 26px;
+
+  /* Font Weights */
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Font Sizes */
+
+  --fs-Error-heading: 3rem;
+  --fs-Body-text: 1.125rem;
+  --fs-btn: 1.125rem;
+  --fs-header: 1.5rem;
+  --fs-small: 0.875rem;
+
+  /* Colors */
+
+  --clr-primary: #333333;
+  --clr-body: #4f4f4f;
+  --clr-links: #bdbdbd;
+}
+
+/* General Styling */
+
+body {
+  font-family: "Space Mono", monospace;
+}
+img {
+  width: 100%;
+}
+.container {
+  width: 85%;
+  margin-inline: auto;
+  padding-block: 1em;
+}
+.heading {
+  font-family: "Inconsolata", monospace;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-header);
+
+  color: var(--clr-primary);
+}
+.even-columns {
+  display: grid;
+  gap: 3em;
+  margin-block: 3em;
+}
+.col2 {
+  display: grid;
+  gap: 2em;
+  justify-items: start;
+  text-align: left;
+}
+.error__heading {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-Error-heading);
+  line-height: var(--lineHeight-1);
+  color: var(--clr-primary);
+}
+.error__text {
+  font-size: var(--fs-Body-text);
+  line-height: var(--lineHeight-2);
+  color: var(--clr-body);
+}
+.btn {
+  font-size: var(--fs-btn);
+  padding: 1em 1.5em;
+  color: #fff;
+  background-color: var(--clr-primary);
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.btn:hover {
+  box-shadow: 0 0 5px 3px rgba(0 0 0 / 0.25);
+}
+.links {
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+
+  color: var(--clr-links);
+  text-align: center;
+}
+.name {
+  color: black;
+  font-weight: bolder;
+  font-family: cursive;
+}
+
+/* For Screen Sizes Above 500px Viewport Width */
+
+@media (min-width: 500px) {
+  :root {
+    /* Font Sizes */
+
+    --fs-Error-heading: 4rem;
+    --fs-Body-text: 1.5rem;
+
+    /* Line Height */
+
+    --lineHeight-1: 94px;
+    --lineHeight-2: 35px;
+  }
+  .container {
+    width: 80%;
+    padding-block: 1em;
+  }
+  .even-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .error__text {
+    width: 80%;
+  }
+  .btn {
+    padding: 0.5em 2em;
+  }
+}
